@@ -1,0 +1,54 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+*.temp
+
+# IDE settings
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node/React apps (any folder name)
+node_modules/
+**/node_modules/
+dist/
+dist-ssr/
+build/
+coverage/
+.vite/
+.cache/
+.parcel-cache/
+.eslintcache
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+
+# WordPress app (picknbeauty)
+picknbeauty/.env
+picknbeauty/.env.*
+picknbeauty/wp-config.php
+picknbeauty/wp-content/debug.log
+picknbeauty/wp-content/*.log
+picknbeauty/wp-content/uploads/
+picknbeauty/wp-content/upgrade/
+picknbeauty/wp-content/upgrade-temp-backup/
+picknbeauty/wp-content/ai1wm-backups/
+picknbeauty/wp-content/cache/
+picknbeauty/wp-content/litespeed/
+picknbeauty/wp-content/wflogs/
+picknbeauty/wp-content/backups/
+picknbeauty/wp-content/languages/

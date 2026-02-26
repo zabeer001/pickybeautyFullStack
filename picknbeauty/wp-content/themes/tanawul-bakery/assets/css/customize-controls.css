@@ -1,0 +1,451 @@
+.accordion-section-title button.accordion-trigger{
+  height: auto !important;
+}
+#accordion-section-tanawul_bakery_example_1 .accordion-section-title:after{
+  content: none;
+}
+#customize-controls .control-section-tanawul-bakery .accordion-section-title:hover,
+#customize-controls .control-section-tanawul-bakery .accordion-section-title:focus {
+	background-color: #fff;
+}
+#accordion-section-tanawul_bakery_example_1{
+  display: flex;
+}
+#accordion-section-tanawul_bakery_example_1 .accordion-section-title, #accordion-section-tanawul_bakery_example_1:hover .accordion-section-title{
+  color: #000000 !important;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  background-color: #ffc300 !important;
+}
+#accordion-section-tanawul_bakery_example_1 a.button-secondary{
+  background: linear-gradient(45deg, #a700e6, #290aca);
+  color: #ffffff;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 5px 20px;
+}
+#accordion-section-tanawul_bakery_example_1 a.button-secondary:hover{
+  background: linear-gradient(315deg, white 40%, #d47de8 80%);
+  color: #000000;
+}
+.control-section-tanawul-bakery .accordion-section-title .button {
+  margin-top:  10px;
+  font-weight: 400;
+  display: inline-block;
+  width: auto;
+  float: none;
+}
+.rtl .control-section-tanawul-bakery .accordion-section-title .button {
+	margin-left:  0;
+	margin-right: 8px;
+}
+
+/* ---------Excerpt & Logo --------- */
+input#_customize-input-tanawul_bakery_excerpt_number,
+input#_customize-input-tanawul_bakery_slider_excerpt_number,
+input#_customize-input-tanawul_bakery_slider_opacity_color,
+input#_customize-input-tanawul_bakery_slider_speed,
+input#_customize-input-tanawul_bakery_scroll_top_fontsize,
+input#_customize-input-tanawul_bakery_comment_form_size,
+input#_customize-input-tanawul_bakery_featured_image_box_shadow {
+    width: 100%;
+}
+input#_customize-input-logo_size{
+    width: 100%;
+}
+li#customize-control-logo_size {
+    background: #fff;
+    padding: 4px;
+}
+
+/* ---------FontAwesome Icon Styles--------- */
+.type-icon{
+  overflow: hidden;
+}
+.selected-icon{
+  background: #fff;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  border: 1px solid #EEE;
+  position: relative;
+  margin-right: 45px;
+  cursor: pointer;
+  font-size: 28px;
+  width: 50px;
+}
+.selected-icon span{
+  position: absolute;
+  background: #fff;
+  width: 220px;
+  font-size: 15px;
+}
+.selected-icon i.fa.fa-angle-down {
+  position: relative;
+  left: 10px;
+}
+.icon-list{
+  height: 215px;
+  overflow-y: scroll;
+  font-size: 18px;
+  border: 1px solid #EEE;
+  background: #fff;
+  border-right: 0;
+  border-top: 0;
+  padding-bottom: 4%;
+  display: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.icon-list li{
+  float: left;
+  margin: 4% 3% 0;
+  height: 40px;
+  width: 16%;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid #EEE;  
+}
+.icon-list li:hover{
+  background: #333;
+  border: 1px solid #333;
+  color: #FFF;
+}
+.icon-list li.icon-active{
+  background: #0073aa;
+  border: 1px solid #0073aa;
+  color: #FFF;
+}
+.tanawul-bakery-social-class{
+  display: none;
+}
+.socialInput{
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* Premium Features CSS  */
+#customize-control-tanawul_bakery_sidebar_layout_premium_info,
+#customize-control-tanawul_bakery_typography_premium_info,
+#customize-control-tanawul_bakery_typography_theme_color_premium_info,
+#customize-control-tanawul_bakery_typography_layout_premium_info,
+#customize-control-tanawul_bakery_typography_button_premium_info,
+#customize-control-tanawul_bakery_typography_sidebar_premium_info,
+#customize-control-tanawul_bakery_typography_header_premium_info,
+#customize-control-tanawul_bakery_typography_navigation_premium_info,
+#customize-control-tanawul_bakery_slider_premium_info,
+#customize-control-tanawul_bakery_offer_premium_info,
+#customize-control-tanawul_bakery_no_result_premium_info,
+#customize-control-tanawul_bakery_page_not_found_premium_info,
+#customize-control-tanawul_bakery_mobile_media_premium_info,
+#customize-control-tanawul_bakery_post_premium_info,
+#customize-control-tanawul_bakery_single_post_premium_info,
+#customize-control-tanawul_bakery_related_post_premium_info,
+#customize-control-tanawul_bakery_footer_premium_info
+{
+  border-radius: 7px;
+  padding: 12px;
+  background-color: #fafafa;
+  border: 1px solid #a9a1a1;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: auto;
+  margin-bottom: 12px!important;
+}
+#customize-control-tanawul_bakery_sidebar_layout_premium_info .customize-control-title,
+#customize-control-tanawul_bakery_typography_premium_info .customize-control-title,
+#customize-control-tanawul_bakery_typography_theme_color_premium_info .customize-control-title,
+#customize-control-tanawul_bakery_typography_layout_premium_info .customize-control-title,
+#customize-control-tanawul_bakery_typography_button_premium_info .customize-control-title,
+#customize-control-tanawul_bakery_typography_sidebar_premium_info .customize-control-title,
+#customize-control-tanawul_bakery_typography_header_premium_info .customize-control-title,
+#customize-control-tanawul_bakery_typography_navigation_premium_info .customize-control-title,
+#customize-control-tanawul_bakery_slider_premium_info .customize-control-title,
+#customize-control-tanawul_bakery_offer_premium_info .customize-control-title,
+#customize-control-tanawul_bakery_no_result_premium_info .customize-control-title,
+#customize-control-tanawul_bakery_page_not_found_premium_info .customize-control-title,
+#customize-control-tanawul_bakery_mobile_media_premium_info .customize-control-title,
+#customize-control-tanawul_bakery_post_premium_info .customize-control-title,
+#customize-control-tanawul_bakery_single_post_premium_info .customize-control-title,
+#customize-control-tanawul_bakery_related_post_premium_info .customize-control-title,
+#customize-control-tanawul_bakery_footer_premium_info .customize-control-title
+{
+  font-size: 19px;
+  font-weight: 900;
+  color: #484547;
+  border-bottom: 1px solid #484547;
+  margin-bottom: 15px;
+}
+#customize-control-tanawul_bakery_sidebar_layout_premium_info ul,
+#customize-control-tanawul_bakery_typography_premium_info ul,
+#customize-control-tanawul_bakery_typography_theme_color_premium_info ul,
+#customize-control-tanawul_bakery_typography_layout_premium_info ul,
+#customize-control-tanawul_bakery_typography_button_premium_info ul,
+#customize-control-tanawul_bakery_typography_sidebar_premium_info ul,
+#customize-control-tanawul_bakery_typography_header_premium_info ul,
+#customize-control-tanawul_bakery_typography_navigation_premium_info ul,
+#customize-control-tanawul_bakery_slider_premium_info ul,
+#customize-control-tanawul_bakery_offer_premium_info ul,
+#customize-control-tanawul_bakery_no_result_premium_info ul,
+#customize-control-tanawul_bakery_page_not_found_premium_info ul,
+#customize-control-tanawul_bakery_mobile_media_premium_info ul,
+#customize-control-tanawul_bakery_post_premium_info ul,
+#customize-control-tanawul_bakery_single_post_premium_info ul,
+#customize-control-tanawul_bakery_related_post_premium_info ul,
+#customize-control-tanawul_bakery_footer_premium_info ul
+{
+  padding-left: 15px;
+  padding-bottom: 20px;
+}
+
+#customize-control-tanawul_bakery_sidebar_layout_premium_info ul li,
+#customize-control-tanawul_bakery_typography_premium_info ul li,
+#customize-control-tanawul_bakery_typography_theme_color_premium_info ul li,
+#customize-control-tanawul_bakery_typography_layout_premium_info ul li,
+#customize-control-tanawul_bakery_typography_button_premium_info ul li,
+#customize-control-tanawul_bakery_typography_sidebar_premium_info ul li,
+#customize-control-tanawul_bakery_typography_header_premium_info ul li,
+#customize-control-tanawul_bakery_typography_navigation_premium_info ul li,
+#customize-control-tanawul_bakery_slider_premium_info ul li,
+#customize-control-tanawul_bakery_offer_premium_info ul li,
+#customize-control-tanawul_bakery_no_result_premium_info ul li,
+#customize-control-tanawul_bakery_page_not_found_premium_info ul li,
+#customize-control-tanawul_bakery_mobile_media_premium_info ul li,
+#customize-control-tanawul_bakery_post_premium_info ul li,
+#customize-control-tanawul_bakery_single_post_premium_info ul li,
+#customize-control-tanawul_bakery_related_post_premium_info ul li,
+#customize-control-tanawul_bakery_footer_premium_info ul li
+{
+  list-style: square;
+  font-style: normal;
+}
+
+#customize-control-tanawul_bakery_sidebar_layout_premium_info a,
+#customize-control-tanawul_bakery_typography_premium_info a,
+#customize-control-tanawul_bakery_typography_theme_color_premium_info a,
+#customize-control-tanawul_bakery_typography_layout_premium_info a,
+#customize-control-tanawul_bakery_typography_button_premium_info a,
+#customize-control-tanawul_bakery_typography_sidebar_premium_info a,
+#customize-control-tanawul_bakery_typography_header_premium_info a,
+#customize-control-tanawul_bakery_typography_navigation_premium_info a,
+#customize-control-tanawul_bakery_slider_premium_info a,
+#customize-control-tanawul_bakery_offer_premium_info a,
+#customize-control-tanawul_bakery_no_result_premium_info a,
+#customize-control-tanawul_bakery_page_not_found_premium_info a,
+#customize-control-tanawul_bakery_mobile_media_premium_info a,
+#customize-control-tanawul_bakery_post_premium_info a,
+#customize-control-tanawul_bakery_single_post_premium_info a,
+#customize-control-tanawul_bakery_related_post_premium_info a,
+#customize-control-tanawul_bakery_footer_premium_info a
+{
+  
+  all: unset;
+  width: 100px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #f0f0f0;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  
+}
+#customize-control-tanawul_bakery_sidebar_layout_premium_info a::after,
+#customize-control-tanawul_bakery_typography_premium_info a::after,
+#customize-control-tanawul_bakery_typography_theme_color_premium_info a::after,
+#customize-control-tanawul_bakery_typography_layout_premium_info a::after,
+#customize-control-tanawul_bakery_typography_button_premium_info a::after,
+#customize-control-tanawul_bakery_typography_sidebar_premium_info a::after,
+#customize-control-tanawul_bakery_typography_header_premium_info a::after,
+#customize-control-tanawul_bakery_typography_navigation_premium_info a::after,
+#customize-control-tanawul_bakery_slider_premium_info a::after,
+#customize-control-tanawul_bakery_offer_premium_info a::after,
+#customize-control-tanawul_bakery_no_result_premium_info a::after,
+#customize-control-tanawul_bakery_page_not_found_premium_info a::after,
+#customize-control-tanawul_bakery_mobile_media_premium_info a::after,
+#customize-control-tanawul_bakery_post_premium_info a::after,
+#customize-control-tanawul_bakery_single_post_premium_info a::after,
+#customize-control-tanawul_bakery_related_post_premium_info a::after,
+#customize-control-tanawul_bakery_footer_premium_info a::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all .4s;
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #ffffff15;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+#customize-control-tanawul_bakery_sidebar_layout_premium_info a::before,
+#customize-control-tanawul_bakery_typography_premium_info a::before,
+#customize-control-tanawul_bakery_typography_theme_color_premium_info a::before,
+#customize-control-tanawul_bakery_typography_layout_premium_info a::before,
+#customize-control-tanawul_bakery_typography_button_premium_info a::before,
+#customize-control-tanawul_bakery_typography_sidebar_premium_info a::before,
+#customize-control-tanawul_bakery_typography_header_premium_info a::before,
+#customize-control-tanawul_bakery_typography_navigation_premium_info a::before,
+#customize-control-tanawul_bakery_slider_premium_info a::before,
+#customize-control-tanawul_bakery_offer_premium_info a::before,
+#customize-control-tanawul_bakery_no_result_premium_info a::before,
+#customize-control-tanawul_bakery_page_not_found_premium_info a::before,
+#customize-control-tanawul_bakery_mobile_media_premium_info a::before,
+#customize-control-tanawul_bakery_post_premium_info a::before,
+#customize-control-tanawul_bakery_single_post_premium_info a::before,
+#customize-control-tanawul_bakery_related_post_premium_info a::before,
+#customize-control-tanawul_bakery_footer_premium_info a::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all .4s;
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #a700e6, #290aca);
+  border-radius: 10px;
+
+}
+#customize-control-tanawul_bakery_sidebar_layout_premium_info a::after::before,
+#customize-control-tanawul_bakery_typography_premium_info a::after::before,
+#customize-control-tanawul_bakery_typography_theme_color_premium_info a::after::before,
+#customize-control-tanawul_bakery_typography_layout_premium_info a::after::before,
+#customize-control-tanawul_bakery_typography_button_premium_info a::after::before,
+#customize-control-tanawul_bakery_typography_sidebar_premium_info a::after::before,
+#customize-control-tanawul_bakery_typography_header_premium_info a::after::before,
+#customize-control-tanawul_bakery_typography_navigation_premium_info a::after::before,
+#customize-control-tanawul_bakery_slider_premium_info a::after::before,
+#customize-control-tanawul_bakery_offer_premium_info a::after::before,
+#customize-control-tanawul_bakery_no_result_premium_info a::after::before,
+#customize-control-tanawul_bakery_page_not_found_premium_info a::after::before,
+#customize-control-tanawul_bakery_mobile_media_premium_info a::after::before,
+#customize-control-tanawul_bakery_post_premium_info a::after::before,
+#customize-control-tanawul_bakery_single_post_premium_info a::after::before,
+#customize-control-tanawul_bakery_related_post_premium_info a::after::before,
+#customize-control-tanawul_bakery_footer_premium_info a::after::before
+{
+transform: translate(5%, 20%);
+width: 110%;
+height: 110%;
+}
+#customize-control-tanawul_bakery_sidebar_layout_premium_info a::after::after,
+#customize-control-tanawul_bakery_typography_premium_info a::after::after,
+#customize-control-tanawul_bakery_typography_theme_color_premium_info a::after::after,
+#customize-control-tanawul_bakery_typography_layout_premium_info a::after::after,
+#customize-control-tanawul_bakery_typography_button_premium_info a::after::after,
+#customize-control-tanawul_bakery_typography_sidebar_premium_info a::after::after,
+#customize-control-tanawul_bakery_typography_header_premium_info a::after::after,
+#customize-control-tanawul_bakery_typography_navigation_premium_info a::after::after,
+#customize-control-tanawul_bakery_slider_premium_info a::after::after,
+#customize-control-tanawul_bakery_offer_premium_info a::after::after,
+#customize-control-tanawul_bakery_no_result_premium_info a::after::after,
+#customize-control-tanawul_bakery_page_not_found_premium_info a::after::after,
+#customize-control-tanawul_bakery_mobile_media_premium_info a::after::after,
+#customize-control-tanawul_bakery_post_premium_info a::after::after,
+#customize-control-tanawul_bakery_single_post_premium_info a::after::after,
+#customize-control-tanawul_bakery_related_post_premium_info a::after::after,
+#customize-control-tanawul_bakery_footer_premium_info a::after::after
+{
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+#customize-control-tanawul_bakery_sidebar_layout_premium_info a:active::after,
+#customize-control-tanawul_bakery_typography_premium_info a:active::after,
+#customize-control-tanawul_bakery_typography_theme_color_premium_info a:active::after,
+#customize-control-tanawul_bakery_typography_layout_premium_info a:active::after,
+#customize-control-tanawul_bakery_typography_button_premium_info a:active::after,
+#customize-control-tanawul_bakery_typography_sidebar_premium_info a:active::after,
+#customize-control-tanawul_bakery_typography_header_premium_info a:active::after,
+#customize-control-tanawul_bakery_typography_navigation_premium_info a:active::after,
+#customize-control-tanawul_bakery_slider_premium_info a:active::after,
+#customize-control-tanawul_bakery_offer_premium_info a:active::after,
+#customize-control-tanawul_bakery_no_result_premium_info a:active::after,
+#customize-control-tanawul_bakery_page_not_found_premium_info a:active::after,
+#customize-control-tanawul_bakery_mobile_media_premium_info a:active::after,
+#customize-control-tanawul_bakery_post_premium_info a:active::after,
+#customize-control-tanawul_bakery_single_post_premium_info a:active::after,
+#customize-control-tanawul_bakery_related_post_premium_info a:active::after,
+#customize-control-tanawul_bakery_footer_premium_info a:active::after
+{
+  transition: 0s;
+  transform: translate(0, 5%);
+}
+
+#customize-control-tanawul_bakery_sidebar_layout_premium_info a:hover::before,
+#customize-control-tanawul_bakery_typography_premium_info a:hover::before,
+#customize-control-tanawul_bakery_typography_theme_color_premium_info a:hover::before,
+#customize-control-tanawul_bakery_typography_layout_premium_info a:hover::before,
+#customize-control-tanawul_bakery_typography_button_premium_info a:hover::before,
+#customize-control-tanawul_bakery_typography_sidebar_premium_info a:hover::before,
+#customize-control-tanawul_bakery_typography_header_premium_info a:hover::before,
+#customize-control-tanawul_bakery_typography_navigation_premium_info a:hover::before,
+#customize-control-tanawul_bakery_slider_premium_info a:hover::before,
+#customize-control-tanawul_bakery_offer_premium_info a:hover::before,
+#customize-control-tanawul_bakery_no_result_premium_info a:hover::before,
+#customize-control-tanawul_bakery_page_not_found_premium_info a:hover::before,
+#customize-control-tanawul_bakery_mobile_media_premium_info a:hover::before,
+#customize-control-tanawul_bakery_post_premium_info a:hover::before,
+#customize-control-tanawul_bakery_single_post_premium_info a:hover::before,
+#customize-control-tanawul_bakery_related_post_premium_info a:hover::before,
+#customize-control-tanawul_bakery_footer_premium_info a:hover::before
+{
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+#customize-control-tanawul_bakery_sidebar_layout_premium_info a:hover::after,
+#customize-control-tanawul_bakery_typography_premium_info a:hover::after,
+#customize-control-tanawul_bakery_typography_theme_color_premium_info a:hover::after,
+#customize-control-tanawul_bakery_typography_layout_premium_info a:hover::after,
+#customize-control-tanawul_bakery_typography_button_premium_info a:hover::after,
+#customize-control-tanawul_bakery_typography_sidebar_premium_info a:hover::after,
+#customize-control-tanawul_bakery_typography_header_premium_info a:hover::after,
+#customize-control-tanawul_bakery_typography_navigation_premium_info a:hover::after,
+#customize-control-tanawul_bakery_slider_premium_info a:hover::after,
+#customize-control-tanawul_bakery_offer_premium_info a:hover::after,
+#customize-control-tanawul_bakery_no_result_premium_info a:hover::after,
+#customize-control-tanawul_bakery_page_not_found_premium_info a:hover::after,
+#customize-control-tanawul_bakery_mobile_media_premium_info a:hover::after,
+#customize-control-tanawul_bakery_post_premium_info a:hover::after,
+#customize-control-tanawul_bakery_single_post_premium_info a:hover::after,
+#customize-control-tanawul_bakery_related_post_premium_info a:hover::after,
+#customize-control-tanawul_bakery_footer_premium_info a:hover::after
+{
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
