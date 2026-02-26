@@ -37,7 +37,7 @@ coverage/
 .env.*
 !.env.example
 
-# WordPress app (picknbeauty)
+# WordPress app (legacy + renamed folder)
 picknbeauty/.env
 picknbeauty/.env.*
 picknbeauty/wp-config.php
@@ -52,3 +52,18 @@ picknbeauty/wp-content/litespeed/
 picknbeauty/wp-content/wflogs/
 picknbeauty/wp-content/backups/
 picknbeauty/wp-content/languages/
+
+pickyBeauty/.env
+pickyBeauty/.env.*
+pickyBeauty/wp-config.php
+pickyBeauty/wp-content/debug.log
+pickyBeauty/wp-content/*.log
+pickyBeauty/wp-content/uploads/
+pickyBeauty/wp-content/upgrade/
+pickyBeauty/wp-content/upgrade-temp-backup/
+pickyBeauty/wp-content/ai1wm-backups/
+pickyBeauty/wp-content/cache/
+pickyBeauty/wp-content/litespeed/
+pickyBeauty/wp-content/wflogs/
+pickyBeauty/wp-content/backups/
+pickyBeauty/wp-content/languages/

@@ -1,0 +1,41 @@
+version: "3" 
+services:
+  db:
+    container_name: pickynbeauty-db
+    image: mysql:latest
+    restart: "no"
+    environment:
+      MYSQL_ROOT_PASSWORD: MySQLRootPassword
+      MYSQL_DATABASE: MySQLDatabaseName
+      MYSQL_USER: MySQLUsername
+      MYSQL_PASSWORD: MySQLUserPassword
+
+  wordpress:
+    container_name: pickynbeauty-wordpress
+    depends_on:
+      - db
+    image: wordpress:latest
+    restart: "no"
+    ports:
+      - "81:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: MySQLUsername
+      WORDPRESS_DB_PASSWORD: MySQLUserPassword
+      WORDPRESS_DB_NAME: MySQLDatabaseName
+    volumes:
+      - "./:/var/www/html"
+
+  phpmyadmin:
+    container_name: pickynbeauty-phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    restart: "no"
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: MySQLUsername
+      PMA_PASSWORD: MySQLUserPassword
+
+volumes:
+  mysql: {}
