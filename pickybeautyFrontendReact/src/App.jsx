@@ -2,16 +2,16 @@ import React from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom"; // ✅ changed here
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-import CartPage from "./pages/cart/CartPage";
-import CategoryPage from "./pages/category/CategoryPage";
+import CartPage from "./pages/cart-step/CartPage";
+import CategoryPage from "./pages/category-step/CategoryPage";
 import DetailsStepPage from "./pages/details-step/DetailsStepPage";
 import LocationStepPage from "./pages/location-step/LocationStepPage";
 import MultiStepFormPage from "./pages/multi-step-form/MultiStepFormPage";
-import BudgetPage from "./pages/budget/BudgetPage";
+import BudgetPage from "./pages/budget-step/BudgetPage";
 import PaymentStepPage from "./pages/payment-step/PaymentStepPage";
 
 import { FormProvider } from "./context/FormContext";
-import OrderPage from "./pages/order/OrderPage";
+import OrderPage from "./pages/order-step/OrderPage";
 import EmailStepPage from "./pages/email-step/EmailStepPage";
 import { ToastContainer } from "react-toastify";
 
