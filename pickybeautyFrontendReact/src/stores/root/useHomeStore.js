@@ -1,12 +1,16 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
+const normalizeCategoryValue = (category) =>
+  typeof category === "object" && category !== null ? category.id ?? null : category;
+
 // ✅ Category store
 export const useCategoryStore = create(
   persist(
     (set) => ({
       category: null,
-      setSelectedCategory: (category) => set({ category }),
+      setSelectedCategory: (category) =>
+        set({ category: normalizeCategoryValue(category) }),
     }),
     {
       name: "selectedCategory-storage", // 🔹 key for localStorage

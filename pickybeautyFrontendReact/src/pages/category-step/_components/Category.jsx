@@ -11,10 +11,18 @@ import CategoryList from "./CategoryList";
 const Category = () => {
   const navigate = useNavigate();
   const { category, setSelectedCategory } = useCategoryStore();
+  const normalizedCategoryId =
+    typeof category === "object" && category !== null ? category.id ?? null : category;
 
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [selectedCategoryId, setSelectedCategoryId] = useState(category);
+  const [selectedCategoryId, setSelectedCategoryId] = useState(normalizedCategoryId);
+
+  useEffect(() => {
+    if (normalizedCategoryId !== category) {
+      setSelectedCategory(normalizedCategoryId);
+    }
+  }, [category, normalizedCategoryId, setSelectedCategory]);
 
   // ✅ Fetch categories from WordPress API
   useEffect(() => {

@@ -3,7 +3,7 @@
 // (React automatically exposes variables prefixed with REACT_APP_)
 
 // env.js
-export const WP_BACKEND = "http://localhost:81";
+export const WP_BACKEND = "https://pickmybeauty.de";
 
 
 

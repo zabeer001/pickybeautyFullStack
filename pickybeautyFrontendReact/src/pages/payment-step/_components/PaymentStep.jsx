@@ -27,6 +27,8 @@ export default function PaymentStep() {
 
   const [discountBudget, setDiscountBudget] = useState(budget);
   const [submitting, setSubmitting] = useState(false);
+  const categoryId =
+    typeof category === "object" && category !== null ? category.id ?? null : category;
 
   useEffect(() => {
     const fetchDiscount = async () => {
@@ -67,7 +69,7 @@ export default function PaymentStep() {
     setSubmitting(true);
 
     const finalOrder = {
-      category_id: category,
+      category_id: categoryId,
       budget: discountBudget,
       payment_method: order.paymentMethod,
       shipping: {
@@ -127,7 +129,7 @@ export default function PaymentStep() {
       <StepActions
         containerClassName="mt-8 flex w-full max-w-sm items-center justify-between gap-4"
         nextDisabled={submitting}
-        nextLabel={submitting ? "Senden..." : "Bestellung abschicken"}
+        nextLabel={submitting ? "Senden..." : "Bestellung abschicken →"}
         onBack={() => navigate("/order")}
         onNext={handleSubmit}
       />
