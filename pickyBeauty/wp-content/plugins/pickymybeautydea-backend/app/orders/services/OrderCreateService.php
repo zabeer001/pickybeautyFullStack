@@ -18,11 +18,10 @@ class OrderCreateService
         $payment_method = isset($request) ? sanitize_text_field($request->get_param('payment_method')) : null;
         $sharing     = sanitize_text_field($request->get_param('sharing_status') ?: 'not accepted');
         $category_id = sanitize_text_field($request->get_param('category_id'));
-        $x_value     = ($request->get_param('x') !== null) ? (float) $request->get_param('x') : null;
-        $y_value     = ($request->get_param('y') !== null) ? (float) $request->get_param('y') : null;
-
         $shipping_id = ($request->get_param('shipping_id') !== null) ? (int) $request->get_param('shipping_id') : null;
         $shippingObj = self::sanitizeShippingInput($request->get_param('shipping'));
+        $x_value     = self::resolveCoordinateValue($request, $shippingObj, 'x');
+        $y_value     = self::resolveCoordinateValue($request, $shippingObj, 'y');
 
         if ($shippingObj) {
             $newShipId = self::insertShipping($shippingObj);
@@ -130,7 +129,36 @@ class OrderCreateService
             'city'     => isset($payload['city'])     ? sanitize_text_field($payload['city'])     : null,
             'district' => isset($payload['district']) ? sanitize_text_field($payload['district']) : null,
             'zip_code' => isset($payload['zip_code']) ? sanitize_text_field($payload['zip_code']) : null,
+            'x'        => self::sanitizeCoordinateValue($payload['x'] ?? $payload['lat'] ?? $payload['latitude'] ?? null),
+            'y'        => self::sanitizeCoordinateValue($payload['y'] ?? $payload['lng'] ?? $payload['longitude'] ?? null),
         ];
+    }
+
+    private static function resolveCoordinateValue(\WP_REST_Request $request, ?array $shipping, string $axis): ?float
+    {
+        $request_value = self::sanitizeCoordinateValue($request->get_param($axis));
+        if ($request_value !== null) {
+            return $request_value;
+        }
+
+        if (is_array($shipping) && array_key_exists($axis, $shipping)) {
+            return self::sanitizeCoordinateValue($shipping[$axis]);
+        }
+
+        return null;
+    }
+
+    private static function sanitizeCoordinateValue($value): ?float
+    {
+        if ($value === null || $value === '') {
+            return null;
+        }
+
+        if (!is_numeric($value)) {
+            return null;
+        }
+
+        return (float) $value;
     }
 
     private static function insertShipping(array $shipping)

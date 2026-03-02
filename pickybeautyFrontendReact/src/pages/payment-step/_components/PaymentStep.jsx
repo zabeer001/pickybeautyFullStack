@@ -72,12 +72,16 @@ export default function PaymentStep() {
       category_id: categoryId,
       budget: discountBudget,
       payment_method: order.paymentMethod,
+      x: order.x,
+      y: order.y,
       shipping: {
         name: order.name,
         email: order.email,
         phone: order.phone,
         zip_code: zipcode,
         address: order.address,
+        x: order.x,
+        y: order.y,
       },
     };
 
