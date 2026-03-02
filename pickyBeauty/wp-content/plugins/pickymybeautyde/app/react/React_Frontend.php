@@ -48,7 +48,7 @@ class React_Frontend
             'http://localhost:5173/src/main.jsx',
             [],
             time(),
-            true
+            ['in_footer' => true]
         );
     }
 
@@ -60,7 +60,7 @@ class React_Frontend
             'http://localhost:5173/src/main.jsx',
             [],
             time(),
-            true
+            ['in_footer' => true]
         );
     }
 

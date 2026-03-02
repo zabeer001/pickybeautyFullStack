@@ -62,7 +62,7 @@ class React_Admin
             'http://localhost:5173/src/main.jsx',
             [],
             time(),
-            true
+            ['in_footer' => true]
         );
     }
 
@@ -74,7 +74,7 @@ class React_Admin
             'http://localhost:5173/src/main.jsx',
             [],
             time(),
-            true
+            ['in_footer' => true]
         );
     }
 

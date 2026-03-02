@@ -51,6 +51,7 @@ export const useOrderStore = create(
         email: "",
         phone: "",
         address: "",
+        paymentMethod: "",
       },
       setOrderField: (field, value) =>
         set((state) => ({
@@ -66,6 +67,7 @@ export const useOrderStore = create(
             email: "",
             phone: "",
             address: "",
+            paymentMethod: "",
           },
         }),
     }),

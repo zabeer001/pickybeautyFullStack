@@ -1,7 +1,3 @@
-# BEGIN LSCACHE
-# END LSCACHE
-# BEGIN NON_LSCACHE
-# END NON_LSCACHE
 # BEGIN WordPress
 # The directives (lines) between "BEGIN WordPress" and "END WordPress" are
 # dynamically generated, and should only be modified via WordPress filters.
@@ -17,12 +13,3 @@ RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress
-
-# BEGIN LiteSpeed
-# The directives (lines) between "BEGIN LiteSpeed" and "END LiteSpeed" are
-# dynamically generated, and should only be modified via WordPress filters.
-# Any changes to the directives between these markers will be overwritten.
-<IfModule Litespeed>
-	SetEnv noabort 1
-</IfModule>
-# END LiteSpeed

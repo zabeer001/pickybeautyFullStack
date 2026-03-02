@@ -2,14 +2,17 @@ import React from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom"; // ✅ changed here
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-import Cart from "./pages/Cart";
-import Category from "./pages/Category";
-import MultiStepForm from "./pages/MultiStepForm";
-import Budget from "./pages/Budget";
-import Location from "./pages/Location";
+import CartPage from "./pages/cart/CartPage";
+import CategoryPage from "./pages/category/CategoryPage";
+import DetailsStepPage from "./pages/details-step/DetailsStepPage";
+import LocationStepPage from "./pages/location-step/LocationStepPage";
+import MultiStepFormPage from "./pages/multi-step-form/MultiStepFormPage";
+import BudgetPage from "./pages/budget/BudgetPage";
+import PaymentStepPage from "./pages/payment-step/PaymentStepPage";
+
 import { FormProvider } from "./context/FormContext";
-import Order from "./pages/Order";
-import EmailStep from "./pages/EmailStep";
+import OrderPage from "./pages/order/OrderPage";
+import EmailStepPage from "./pages/email-step/EmailStepPage";
 import { ToastContainer } from "react-toastify";
 
 const queryClient = new QueryClient();
@@ -20,13 +23,16 @@ export default function App() {
       <FormProvider>
         <Router> {/* ✅ Now using HashRouter */}
           <Routes>
-            <Route path="/" element={<MultiStepForm />}>
-              <Route index element={<Category />} />
-              <Route path="budget" element={<Budget />} />
-              <Route path="cart" element={<Cart />} />
-              <Route path="location" element={<Location />} />
-              <Route path="email" element={<EmailStep />} />
-              <Route path="order" element={<Order />} />
+            <Route path="/" element={<MultiStepFormPage />}>
+              <Route index element={<DetailsStepPage />} />
+              <Route path="category" element={<CategoryPage />} />
+              <Route path="location" element={<LocationStepPage />} />
+              <Route path="budget" element={<BudgetPage />} />
+              <Route path="cart" element={<CartPage />} />
+           
+              <Route path="email" element={<EmailStepPage />} />
+              <Route path="order" element={<OrderPage />} />
+              <Route path="payment" element={<PaymentStepPage />} />
             </Route>
           </Routes>
           <ToastContainer position="top-right" autoClose={3000} />

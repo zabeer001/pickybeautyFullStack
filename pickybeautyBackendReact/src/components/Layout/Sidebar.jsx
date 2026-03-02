@@ -4,6 +4,7 @@ import {
   BadgeCheck,
   Layers3,
   LayoutDashboard,
+  MapPinned,
   PackageCheck,
   UserRoundCog,
 } from "lucide-react";
@@ -100,6 +101,15 @@ const Sidebar = ({ user }) => {
     </>
   );
 
+  const commonLinks = [
+    {
+      to: "/location",
+      label: "My Location",
+      description: "Set your active service area",
+      icon: MapPinned,
+    },
+  ];
+
   const loadingState = (
     <div className="w-full animate-pulse rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4">
       <div className="h-4 w-32 rounded bg-white" />
@@ -138,6 +148,7 @@ const Sidebar = ({ user }) => {
         {isVendor && renderLinks(vendorLinks, "Workspace")}
         {isAdmin && renderLinks(adminLinks, "Navigation")}
         {isUser && renderLinks(userLinks, "Navigation")}
+        {renderLinks(commonLinks, "Profile")}
 
         <div className="rounded-2xl border border-white bg-white px-4 py-4 text-center text-[11px] uppercase tracking-[0.3em] text-slate-400">
           © {new Date().getFullYear()} Kibs Platform

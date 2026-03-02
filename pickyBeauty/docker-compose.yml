@@ -1,8 +1,8 @@
 version: "3" 
 services:
   db:
-    container_name: pickynbeauty-db
     image: mysql:latest
+    container_name: pickyBeauty_db
     restart: "no"
     environment:
       MYSQL_ROOT_PASSWORD: MySQLRootPassword
@@ -11,10 +11,10 @@ services:
       MYSQL_PASSWORD: MySQLUserPassword
 
   wordpress:
-    container_name: pickynbeauty-wordpress
     depends_on:
       - db
-    image: wordpress:latest
+    image: wordpress:6.8.3
+    container_name: pickyBeauty_wordpress
     restart: "no"
     ports:
       - "81:80"
@@ -27,8 +27,8 @@ services:
       - "./:/var/www/html"
 
   phpmyadmin:
-    container_name: pickynbeauty-phpmyadmin
     image: phpmyadmin/phpmyadmin
+    container_name: pickyBeauty_phpmyadmin
     restart: "no"
     ports:
       - "8080:80"

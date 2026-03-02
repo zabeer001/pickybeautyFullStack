@@ -15,8 +15,8 @@ if (!defined('ABSPATH')) exit; // Prevent direct access
 define('REACT_ADMIN_API_KEY', 'your_super_secret_key_here');
 define('REACT_ADMIN_PLUGIN', plugin_dir_path(__FILE__));
 
-require_once REACT_ADMIN_PLUGIN . 'app/react/React_Production.php';
-// require_once REACT_ADMIN_PLUGIN . 'app/react/React_Admin.php';
+// require_once REACT_ADMIN_PLUGIN . 'app/react/React_Production.php';
+require_once REACT_ADMIN_PLUGIN . 'app/react/React_Admin.php';
 // require_once REACT_ADMIN_PLUGIN . 'app/react/React_Frontend.php';
 
 

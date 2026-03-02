@@ -15,6 +15,7 @@ import LoyaltyIndexPage from "./pages/loyalty/LoyaltyIndexPage";
 import CustomersIndexPage from "./pages/customers/CustomersIndexPage";
 import CustomersCreatePage from "./pages/customers/CustomersCreatePage";
 import CustomersEditPage from "./pages/customers/CustomersEditPage";
+import UserLocationPage from "./pages/location/UserLocationPage";
 
 import LoyaltyCreatePgae from "./pages/loyalty/LoyaltyCreatePgae";
 import LoyaltyEditPage from './pages/loyalty/LoyaltyEditPage';
@@ -71,6 +72,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="admin/orders/:uniq_id" element={<OrderViewPage />} />
+          <Route path="location" element={<UserLocationPage />} />
 
           {role === "vendor" ? (
             <Route index element={<Navigate to="/vendor/my-orders" replace />} />
