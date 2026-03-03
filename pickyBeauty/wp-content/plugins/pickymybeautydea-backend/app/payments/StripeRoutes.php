@@ -83,11 +83,15 @@ class StripeRoutes
                 ],
                 'success_url' => [
                     'required' => false,
-                    'sanitize_callback' => 'esc_url_raw',
+                    'sanitize_callback' => function ($value) {
+                        return is_string($value) ? trim($value) : '';
+                    },
                 ],
                 'cancel_url' => [
                     'required' => false,
-                    'sanitize_callback' => 'esc_url_raw',
+                    'sanitize_callback' => function ($value) {
+                        return is_string($value) ? trim($value) : '';
+                    },
                 ],
             ],
         ]);

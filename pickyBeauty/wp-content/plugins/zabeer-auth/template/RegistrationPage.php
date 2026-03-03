@@ -93,30 +93,76 @@ ob_end_flush();
     <style>
         .toast {
             position: fixed;
-            top: 25px;
-            right: 25px;
-            background-color: #16a34a;
-            color: white;
-            padding: 14px 22px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            width: min(320px, calc(100vw - 32px));
+            background: rgba(255, 255, 255, 0.96);
+            color: #0f172a;
+            padding: 14px 16px;
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            border-radius: 14px;
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.16);
+            backdrop-filter: blur(10px);
             opacity: 0;
-            transform: translateY(-20px);
-            transition: all 0.4s ease;
+            transform: translateY(-10px) scale(0.98);
+            transition: opacity 0.24s ease, transform 0.24s ease;
             z-index: 9999;
-            font-weight: 500;
+            pointer-events: none;
         }
 
         .toast.show {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
+        }
+
+        .toast__icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 9999px;
+            flex: 0 0 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .toast__content {
+            min-width: 0;
+        }
+
+        .toast__title {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.35;
+            color: #0f172a;
+        }
+
+        .toast__message {
+            margin: 4px 0 0;
+            font-size: 12px;
+            line-height: 1.45;
+            color: #475569;
         }
     </style>
 </head>
 
 <body class="!bg-gradient-to-br !from-rose-700 !to-gray-900 !min-h-screen !flex !justify-center !items-center">
 
-
+    <div id="toast" class="toast" role="status" aria-live="polite">
+        <span class="toast__icon">✓</span>
+        <div class="toast__content">
+            <p class="toast__title">Registrierung erfolgreich</p>
+            <p class="toast__message">Weiterleitung zur Anmeldeseite...</p>
+        </div>
+    </div>
 
     <div class="!bg-white !rounded-2xl !shadow-xl !p-8 !max-w-lg !w-full !transform !transition !hover:-translate-y-1 !hover:shadow-2xl">
         <div class="!text-center !mb-6">
@@ -304,16 +350,17 @@ ob_end_flush();
     <?php if (!empty($success)): ?>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
-
-
                 const toast = document.getElementById('toast');
+                if (!toast) {
+                    window.location.href = "<?php echo site_url('/sign-in?registered=1'); ?>";
+                    return;
+                }
+
                 toast.classList.add('show');
                 setTimeout(() => {
                     toast.classList.remove('show');
                     window.location.href = "<?php echo site_url('/sign-in?registered=1'); ?>";
                 }, 2000);
-
-
             });
         </script>
     <?php endif; ?>

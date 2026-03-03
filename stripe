@@ -1,0 +1,11 @@
+Stripe configuration is now loaded from the WordPress environment.
+
+Set these in wp-config.php or your server environment:
+
+KIBSTERLP_STRIPE_PUBLISHABLE=your_publishable_key
+KIBSTERLP_STRIPE_SECRET=your_secret_key
+
+Example in wp-config.php:
+
+define('KIBSTERLP_STRIPE_PUBLISHABLE', getenv('KIBSTERLP_STRIPE_PUBLISHABLE'));
+define('KIBSTERLP_STRIPE_SECRET', getenv('KIBSTERLP_STRIPE_SECRET'));

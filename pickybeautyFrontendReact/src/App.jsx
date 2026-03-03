@@ -9,6 +9,8 @@ import LocationStepPage from "./pages/location-step/LocationStepPage";
 import MultiStepFormPage from "./pages/multi-step-form/MultiStepFormPage";
 import BudgetPage from "./pages/budget-step/BudgetPage";
 import PaymentStepPage from "./pages/payment-step/PaymentStepPage";
+import PaymentSuccessPage from "./pages/payment-step/PaymentSuccessPage";
+import PaymentFailurePage from "./pages/payment-step/PaymentFailurePage";
 
 import { FormProvider } from "./context/FormContext";
 import OrderPage from "./pages/order-step/OrderPage";
@@ -23,6 +25,8 @@ export default function App() {
       <FormProvider>
         <Router> {/* ✅ Now using HashRouter */}
           <Routes>
+            <Route path="/payment-success" element={<PaymentSuccessPage />} />
+            <Route path="/payment-failed" element={<PaymentFailurePage />} />
             <Route path="/" element={<MultiStepFormPage />}>
               <Route index element={<DetailsStepPage />} />
               <Route path="category" element={<CategoryPage />} />

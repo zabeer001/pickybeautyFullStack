@@ -11,10 +11,78 @@ $locale = preg_match('/^de\b/i', $acceptLanguage) ? 'de-DE' : 'de-DE';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anmeldung</title>
     <!-- Tailwind CSS CDN -->
+    <style>
+        .auth-toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            width: min(320px, calc(100vw - 32px));
+            background: rgba(255, 255, 255, 0.96);
+            color: #0f172a;
+            padding: 14px 16px;
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            border-radius: 14px;
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.16);
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateY(-10px) scale(0.98);
+            transition: opacity 0.24s ease, transform 0.24s ease;
+            z-index: 9999;
+            pointer-events: none;
+        }
 
+        .auth-toast.show {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .auth-toast__icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 9999px;
+            flex: 0 0 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .auth-toast__content {
+            min-width: 0;
+        }
+
+        .auth-toast__title {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.35;
+            color: #0f172a;
+        }
+
+        .auth-toast__message {
+            margin: 4px 0 0;
+            font-size: 12px;
+            line-height: 1.45;
+            color: #475569;
+        }
+    </style>
 </head>
 
 <body class="!bg-gradient-to-br !from-rose-700 !to-gray-900 !min-h-screen !flex !justify-center !items-center">
+    <div id="registered-toast" class="auth-toast" role="status" aria-live="polite">
+        <span class="auth-toast__icon">✓</span>
+        <div class="auth-toast__content">
+            <p class="auth-toast__title">Registrierung abgeschlossen</p>
+            <p class="auth-toast__message">Bitte melden Sie sich jetzt an.</p>
+        </div>
+    </div>
 
     <div class="!bg-white !rounded-2xl !shadow-xl !p-8 !max-w-md !w-full !transform !transition !hover:-translate-y-1 !hover:shadow-2xl">
         <div class="!text-center !mb-6">
@@ -69,6 +137,16 @@ $locale = preg_match('/^de\b/i', $acceptLanguage) ? 'de-DE' : 'de-DE';
         const LOGIN_URL = '<?php echo site_url(); ?>/wp-login.php';
 
         document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const registeredToast = document.getElementById('registered-toast');
+
+            if (params.get('registered') === '1' && registeredToast) {
+                registeredToast.classList.add('show');
+                setTimeout(() => {
+                    registeredToast.classList.remove('show');
+                }, 2600);
+            }
+
             const form = document.getElementById('zabeer-login-form');
 
             form.addEventListener('submit', async function(e) {

@@ -15,6 +15,32 @@ if (!defined('ABSPATH')) exit; // Prevent direct access
 
 define('KIBSTERLP_API_KEY', 'asjkdkjasbdcj');
 
+if (!defined('KIBSTERLP_STRIPE_PUBLISHABLE')) {
+    $stripe_publishable = getenv('KIBSTERLP_STRIPE_PUBLISHABLE');
+    if (!$stripe_publishable && isset($_ENV['KIBSTERLP_STRIPE_PUBLISHABLE'])) {
+        $stripe_publishable = $_ENV['KIBSTERLP_STRIPE_PUBLISHABLE'];
+    }
+    if (!$stripe_publishable && isset($_SERVER['KIBSTERLP_STRIPE_PUBLISHABLE'])) {
+        $stripe_publishable = $_SERVER['KIBSTERLP_STRIPE_PUBLISHABLE'];
+    }
+    if ($stripe_publishable) {
+        define('KIBSTERLP_STRIPE_PUBLISHABLE', $stripe_publishable);
+    }
+}
+
+if (!defined('KIBSTERLP_STRIPE_SECRET')) {
+    $stripe_secret = getenv('KIBSTERLP_STRIPE_SECRET');
+    if (!$stripe_secret && isset($_ENV['KIBSTERLP_STRIPE_SECRET'])) {
+        $stripe_secret = $_ENV['KIBSTERLP_STRIPE_SECRET'];
+    }
+    if (!$stripe_secret && isset($_SERVER['KIBSTERLP_STRIPE_SECRET'])) {
+        $stripe_secret = $_SERVER['KIBSTERLP_STRIPE_SECRET'];
+    }
+    if ($stripe_secret) {
+        define('KIBSTERLP_STRIPE_SECRET', $stripe_secret);
+    }
+}
+
 define('KIBSTERLP_ADMIN_PLUGIN', plugin_dir_path(__FILE__));
 
 

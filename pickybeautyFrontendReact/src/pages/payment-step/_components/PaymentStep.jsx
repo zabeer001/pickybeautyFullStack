@@ -18,6 +18,21 @@ const paymentOptions = [
   { label: "Online-Zahlung", value: "online" },
 ];
 
+function buildCheckoutReturnUrl(routePath, search = "") {
+  const baseUrl = `${window.location.origin}${window.location.pathname}`;
+  return `${baseUrl}#${routePath}${search}`;
+}
+
+function toStripeAmount(amount) {
+  const numericAmount = Number(amount);
+
+  if (!Number.isFinite(numericAmount) || numericAmount <= 0) {
+    return 0;
+  }
+
+  return Math.round(numericAmount * 100);
+}
+
 export default function PaymentStep() {
   const navigate = useNavigate();
   const { category } = useCategoryStore();
@@ -97,6 +112,48 @@ export default function PaymentStep() {
       const data = await response.json();
 
       if (data.status === true) {
+        if (order.paymentMethod === "online") {
+          const stripeAmount = toStripeAmount(discountBudget || budget);
+
+          if (!stripeAmount) {
+            throw new Error("Der Zahlungsbetrag ist ungueltig.");
+          }
+
+          const checkoutResponse = await fetch(
+            `${WP_BACKEND}/wp-json/kibsterlp-admin/v1/stripe/checkout`,
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                amount: stripeAmount,
+                currency: "eur",
+                order_id: data?.data?.id,
+                email: order.email,
+                success_url: buildCheckoutReturnUrl(
+                  "/payment-success",
+                  "?session_id={CHECKOUT_SESSION_ID}"
+                ),
+                cancel_url: buildCheckoutReturnUrl(
+                  "/payment-failed",
+                  "?checkout=cancelled"
+                ),
+              }),
+            }
+          );
+          const checkoutData = await checkoutResponse.json();
+
+          if (!checkoutResponse.ok || !checkoutData?.url) {
+            throw new Error(
+              checkoutData?.message || "Stripe checkout could not be started."
+            );
+          }
+
+          window.location.assign(checkoutData.url);
+          return;
+        }
+
         resetOrder();
         toast.success(data.message || "Order placed successfully!", {
           position: "top-right",
@@ -111,8 +168,8 @@ export default function PaymentStep() {
         autoClose: 3000,
       });
     } catch (error) {
-      console.error("Error saving order:", error);
-      toast.error("Server error. Please try again later.", {
+      console.error("Payment submission error:", error);
+      toast.error(error.message || "Server error. Please try again later.", {
         position: "top-right",
         autoClose: 3000,
       });
