@@ -45,7 +45,7 @@ class UserLocationStatusService
                     'full_address' => null,
                     'status' => $status,
                 ],
-                ['%d', '%d', '%d', '%d', '%s', '%s']
+                ['%d', '%f', '%f', '%d', '%s', '%s']
             );
 
             if (!$inserted) {

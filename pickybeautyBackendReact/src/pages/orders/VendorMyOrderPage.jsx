@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CheckCircle, Eye } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import { backendUrl } from '../../../env';
 import { Link } from 'react-router-dom';
 
@@ -138,8 +138,7 @@ function MyOrderPage() {
                   'Status',
                   'Budget',
                   'Category',
-
-                  'Zip Code',
+                  'Location',
 
                   'Created At',
                   'Actions',
@@ -155,7 +154,7 @@ function MyOrderPage() {
             </thead>
             <tbody className="!bg-white !divide-y !divide-gray-100">
               {orders.map((order) => (
-                <tr key={order?.id}>
+                <tr key={order?.id || order?.order_unique_id}>
                   <td className="!px-6 !py-3 !text-sm">
                     # {order?.id || '—'}
                   </td>
@@ -181,8 +180,25 @@ function MyOrderPage() {
 
 
 
-                  {/* ZIP CODE */}
-                  <td className="!px-6 !py-3 !text-sm">{order?.zip_code || 'N/A'}</td>
+                  {/* LOCATION */}
+                  <td className="!px-6 !py-3 !text-sm">
+                    <div className="!space-y-1">
+                      <p>{order?.zip_code || 'N/A'}</p>
+                      <p>
+                        <span className="!font-medium">Latitude:</span>{' '}
+                        {order?.x ?? '—'}
+                      </p>
+                      <p>
+                        <span className="!font-medium">Longitude:</span>{' '}
+                        {order?.y ?? '—'}
+                      </p>
+                      <p>
+                        <span className="!font-medium">Distance:</span>{' '}
+                        {order?.distance_km ?? '—'}
+                        {order?.distance_km != null ? ' km' : ''}
+                      </p>
+                    </div>
+                  </td>
 
 
 

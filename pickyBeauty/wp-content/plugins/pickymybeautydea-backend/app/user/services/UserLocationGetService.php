@@ -26,8 +26,8 @@ class UserLocationGetService
         if (!empty($row)) {
             $data = [
                 'user_id' => (int) $row['user_id'],
-                'x' => isset($row['x']) ? (int) $row['x'] : 0,
-                'y' => isset($row['y']) ? (int) $row['y'] : 0,
+                'x' => isset($row['x']) ? round((float) $row['x'], 6) : 0,
+                'y' => isset($row['y']) ? round((float) $row['y'], 6) : 0,
                 'radius' => isset($row['radius']) ? (int) $row['radius'] : 0,
                 'full_address' => $row['full_address'],
                 'status' => $row['status'],

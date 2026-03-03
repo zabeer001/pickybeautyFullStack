@@ -28,16 +28,16 @@ class UserLocationService
             if (!is_numeric($x)) {
                 return new \WP_Error('invalid_x', __('x must be numeric', 'kibsterlp'), ['status' => 400]);
             }
-            $fields['x'] = (int) $x;
-            $formats[] = '%d';
+            $fields['x'] = round((float) $x, 6);
+            $formats[] = '%f';
         }
 
         if (!is_null($y)) {
             if (!is_numeric($y)) {
                 return new \WP_Error('invalid_y', __('y must be numeric', 'kibsterlp'), ['status' => 400]);
             }
-            $fields['y'] = (int) $y;
-            $formats[] = '%d';
+            $fields['y'] = round((float) $y, 6);
+            $formats[] = '%f';
         }
 
         if (!is_null($radius)) {

@@ -112,6 +112,8 @@ function OrderViewPage() {
                             <p><strong>Status:</strong> {order.sharing_status}</p>
                             <p><strong>Created:</strong> {order.created_at}</p>
                             <p><strong>Updated:</strong> {order.updated_at}</p>
+                            <p><strong>Latitude:</strong> {order.x ?? "—"}</p>
+                            <p><strong>Longitude:</strong> {order.y ?? "—"}</p>
                         </div>
                     </div>
 

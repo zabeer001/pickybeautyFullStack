@@ -355,7 +355,19 @@ function OrderIndexPage() {
                       <p className="!font-semibold !text-slate-900">{formatCurrency(order.price)}</p>
                     </td>
 
-                    <td className="!px-6 !py-4 !text-slate-500">{order.zip_code || "N/A"}</td>
+                    <td className="!px-6 !py-4">
+                      <div className="!space-y-1 !text-slate-500">
+                        <p>{order.zip_code || "N/A"}</p>
+                        <p>
+                          <span className="!font-medium !text-slate-700">Latitude:</span>{" "}
+                          {order.x ?? "—"}
+                        </p>
+                        <p>
+                          <span className="!font-medium !text-slate-700">Longitude:</span>{" "}
+                          {order.y ?? "—"}
+                        </p>
+                      </div>
+                    </td>
 
                     <td className="!px-6 !py-4">
                       <div className="!flex !items-center !gap-2">
